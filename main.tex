@@ -25,6 +25,7 @@
 %\pgfdeclareimage[height=0.5cm]{le-logo}{logo-irisa}
 %\logo{\pgfuseimage{le-logo}}
 \setbeamertemplate{footline}[frame number]
+\newtheorem{conjecture}[theorem]{Conjecture}
 
 
 
@@ -56,7 +57,7 @@
 \begin{itemize}
     \item Examples : loi uniforme, Ewens, Mallow, permutations virtuelles, Kingman etc.
     \item Objects combinatoires : nombre de cycles, longueurs des cycles, points fixes, suites monotone etc.
-    \item Apllications : biologie (Ewens, mutations), combinatoire, coalescence etc. 
+    \item Apllications : biologie (Ewens, mutations), combinatoire, processus coalescence, classification d etc. 
 \end{itemize}
 \end{frame}
 
@@ -99,7 +100,7 @@ $\ell(\sigma)=3$.
 
 \end{itemize}
 \end{frame}
-\subsection{Correspondance RSK}
+\subsection{Correspondance de Robinson-Schinsted}
 
 \begin{frame}{Tableaux de Young}
    \begin{definition}[Diagrammes de Young]
@@ -122,6 +123,18 @@ $\ell(\sigma)=3$.
 \end{frame}
 
 
+\begin{frame}{Correspondance de Robinson-Schinsted}
+\begin{itemize}
+    \item Bijection entre les permutations de $\mathfrak{S_n}$ et les paires de  tableaux de Young de même forme. 
+    \item On note $\lambda(\sigma):=\lambda_i(\sigma)$ la forme de l'image de $\sigma$ par cette correspondance. 
+    \item $\ell(\sigma)=\lambda_1(\sigma)$
+\end{itemize}    
+\end{frame}
+\begin{frame}{Construction géométrique de Viennot}
+ A ajouter les diapos   
+\end{frame}
+
+
 \section{Cas uniforme}
 \begin{frame}{Plan}
 \tableofcontents[currentsection,currentsubsection,
@@ -129,25 +142,61 @@ $\ell(\sigma)=3$.
     sectionstyle=show/shaded,
 ]
 \end{frame}
-\subsection{correspondance de Robinson-Schinsted}
-\begin{frame}{correspondance de Robinson-Schinsted}
-    
-\end{frame}
-
 \subsection{Conjecture d'Ulam}
-\begin{frame}{test}
-    
+\begin{frame}{Conjecture d'Ulam}
+    \begin{conjecture}[\cite{ulam}]
+    $$\lim_{n\to \infty}\frac{\mathbb{E}(\ell(\sigma))}{\sqrt{n}}=c$$ 
+    \end{conjecture}
+Prouvé par \cite{vershik}
 \end{frame}
 
 \subsection{Theorème de Baik Deift Johannson}
 \begin{frame}{test}
     
 \end{frame}
+
+\subsection{Forme limite de Vershik-Kerov-Logan-Shepp}
+\begin{frame}{test}
+    
+\end{frame}
+
 \section{Universalité}
 \begin{frame}{Plan}
 \tableofcontents[currentsection,currentsubsection,
     hideothersubsections, 
     sectionstyle=show/shaded,
 ]
+\end{frame}
+
+
+\begin{frame}{Références}
+\tiny
+
+\bibliographystyle{abbrvnat}
+    \bibliography{test}
+
+\end{frame}
+\begin{frame}
+
+  \begin{columns}
+    \begin{column}{0.70\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{11}          
+      \end{center}
+    \end{column}
+    \begin{column}{0.30\textwidth}
+      \begin{center}
+
+        \font\endfont = cmss10 at 5.40mm
+\color[rgb]{0.00,0.00,1.00}       \endfont 
+        \baselineskip 7.0mm
+
+        Merci de votre attention
+
+      \end{center}    
+
+    \end{column}
+  \end{columns}
+
 \end{frame}
 \end{document}
