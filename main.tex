@@ -21,6 +21,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
 \usepackage{amsfonts}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
 \usepackage[vcentermath]{youngtab}
 %\pgfdeclareimage[height=0.5cm]{le-logo}{logo-irisa}
 %\logo{\pgfuseimage{le-logo}}
@@ -55,9 +57,9 @@
 \section*{Introduction}
 \begin{frame}{Permutations aléatoires}
 \begin{itemize}
-    \item Examples : loi uniforme, Ewens, Mallow, permutations virtuelles, Kingman etc.
-    \item Objects combinatoires : nombre de cycles, longueurs des cycles, points fixes, suites monotone etc.
-    \item Apllications : biologie (Ewens, mutations), combinatoire, processus coalescence, classification d etc. 
+    \item Exemple : loi uniforme, Ewens, Mallow, permutations virtuelles, Kingman etc.
+    \item Objets combinatoires : nombre de cycles, longueurs des cycles, points fixes, suites monotone, les descentes etc.
+    \item Applications : biologie (Ewens, mutations), combinatoire, processus coalescence, classification d etc. 
 \end{itemize}
 \end{frame}
 
@@ -90,7 +92,7 @@
 \\ 
 \item $i_1<i_2<\dots<i_k$ est une sous-suite croissante de longueur $k$ si $\sigma(i_1)<\sigma(i_2)\dots\sigma(i_k)$.
 
-\item $\ell(\sigma)$  la longueur de la plus longue sous suite croissante
+\item $\ell(\sigma)$  la longueur de la plus longue sous-suite croissante
 \item Exemple \begin{equation*}\sigma=\begin{pmatrix}
  1& 2 & 3 & 4 & 5 \\ 
  5& 3 & 1 & 2 & 4 
@@ -119,8 +121,13 @@ $\ell(\sigma)=3$.
     \begin{definition}[Tableau de Young]
     Un tableau de Young de forme $\lambda$ est un remplissage du diagramme de Young $\lambda$ avec les entrées $\{1,2,\dots,n\}$ strictement croissant sur chaque ligne et chaque colonne. 
     \end{definition}
-    Exemple : les tableaux de Young de forme $\yng(3,1)$ sont $\young(123,4),\young(124,3),\young(134,2)$. 
-\end{frame}
+    \begin{itemize}
+        \item     Exemple : les tableaux de Young de forme $\yng(3,1)$ sont $\young(123,4),\young(124,3),\young(134,2)$. 
+    \item$dim(\lambda)=$ \# tableau de Young de forme $\lambda$. 
+    \item Exemple  $dim\left(\yng(3,1)\right)=3$.
+    \item $dim(\lambda)$ dimension de  la représentation du groupe symétrique indexé par $\lambda$.
+    \end{itemize}
+ \end{frame}
 
 
 \begin{frame}{Correspondance de Robinson-Schinsted}
@@ -145,28 +152,140 @@ $\ell(\sigma)=3$.
 \subsection{Conjecture d'Ulam}
 \begin{frame}{Conjecture d'Ulam}
     \begin{conjecture}[\cite{ulam}]
-    $$\lim_{n\to \infty}\frac{\mathbb{E}(\ell(\sigma))}{\sqrt{n}}=c$$ 
+    Si $\sigma_n \sim {U}_{\mathfrak{S}_n}$, alors
+    $$\lim_{n\to \infty}\frac{\mathbb{E}(\ell(\sigma_n))}{\sqrt{n}}=c.$$ 
     \end{conjecture}
-Prouvé par \cite{vershik}
+\begin{itemize}
+    \item Si $\sigma_n \sim {U}_{\mathfrak{S}_n}$ alors 
+    \begin{align*}
+    \mathbb{P}(\lambda)&=\frac{\#\{\text{paires de tableaux de Young de forme } \lambda\}}{C}\\&=\frac{dim(\lambda)^2}{\sum_{\hat\lambda} dim( \hat\lambda)^2}=\frac{dim(\lambda)^2}{\# \mathfrak{S}_N}=\frac{dim(\lambda)^2}{n!} 
+    \end{align*}
+    \item Prouvé par \cite{vershik} ($c=2$).
+\end{itemize}
+
+
 \end{frame}
 
-\subsection{Theorème de Baik Deift Johannson}
-\begin{frame}{test}
-    
+\subsection{Théorème de Baik, Deift et Johannson}
+\begin{frame}{Théorème de Baik, Deift et Johannson}
+    \begin{theorem}[\cite*{Baik1999}] 
+Si $\sigma_n \sim U_{\mathfrak{S}_n}$ alors
+\begin{equation*} 
+\lim_{n \to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s),
+\end{equation*}
+o\`u  $F_2$ est la distribution de Tracy-Widom.
+\end{theorem}
+On parle "d'universalité":
+\begin{itemize}
+    \item Plus grande (petite) valeurs propres de matrices aléatoires
+    \item Modèles de particules comme le TASEP
+\end{itemize}
 \end{frame}
 
 \subsection{Forme limite de Vershik-Kerov-Logan-Shepp}
-\begin{frame}{test}
-    
+\begin{frame}{Notations Russe}
+\begin{itemize}
+    \item On fait une rotation du tableau par $\frac{3\pi}{4}$.
+    \item On regarde la fonction de hauteur complétée par $|x|$.
+    \item On note la fonction obtenue $L_\lambda$.
+\end{itemize}
 \end{frame}
 
-\section{Universalité}
+\begin{frame}{Notations Russes}
+ \begin{figure}
+\centering
+\begin{tikzpicture}    [/pgfplots/y=0.42cm, /pgfplots/x=0.42cm]
+      \begin{axis}[
+    axis x line=center,
+    axis y line=center,
+    xmin=0, xmax=10,
+    ymin=0, ymax=10, clip=false,
+    ytick={0},
+	xtick={0},
+    minor xtick={0,1,2,3,3,4,5,6,7,8,9},
+    minor ytick={0,1,2,3,3,4,5,6,7,8,9},
+    grid=both,
+    legend pos=north west,
+    ymajorgrids=false,
+    xmajorgrids=false, anchor=origin,
+    grid style=dashed    , rotate around={45:(rel axis cs:0,0)}
+,
+]
+
+\addplot[
+    color=blue,
+        line width=3pt,
+    ]
+    coordinates {
+    (0,10)(0,7)(1,7)(1,5)(2,5)(2,2)(3,2)(3,1)(5,1)(5,0)(10,0)
+    };
+ 
+\end{axis}
+\begin{axis}[
+	axis x line=center,
+    axis y line=center,
+    xmin=-7.07, xmax=7.07,
+    ymin=0, ymax=8, anchor=origin, clip=false,
+    xtick={-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7},
+    ytick={0,1,2,3,3,4,5,6,7,8},
+    legend pos=north west,
+    ymajorgrids=false,
+    xmajorgrids=false,rotate around={0:(rel axis cs:0,0)},
+    grid style=dashed];
+\end{axis}
+    \end{tikzpicture}
+    \caption{ $L_{(7,5,2,1,1,\underline{0})}$}
+     \label{figL}
+\end{figure} 
+\end{frame}
+
+\begin{frame}{Forme limite de Vershik-Kerov-Logan-Shepp}
+    \begin{theorem}[\cite{vershik,LOGAN}]
+    Si $\sigma_n \sim U_{\mathfrak{S}_n}$, alors pour tout $\varepsilon>0$,
+\begin{align*}
+\lim_{n\to \infty} \mathbb{P}\left(\sup_{s\in \mathbb{R}} \left|\frac{1}{\sqrt{2n}}L_{\lambda(\sigma_n)}\left({s}{\sqrt{2n}}\right)-\Omega(s)\right|<\varepsilon\right) =1,
+\end{align*}
+où
+\begin{align*}
+\Omega(s):=\begin{cases}
+\frac{2}{\pi}(s\arcsin({s})+\sqrt{1-s^2}) & \text{ if } |s|<1 \\ 
+|s| & \text{ if } |s|\geq 1 
+\end{cases}.
+\end{align*}
+    \end{theorem}
+    Il y a un lien entre $\Omega$ et la loi semi-circulaire de Wigner.
+\end{frame}
+
+\section{Généralisations}
 \begin{frame}{Plan}
 \tableofcontents[currentsection,currentsubsection,
     hideothersubsections, 
     sectionstyle=show/shaded,
 ]
 \end{frame}
+\subsection{Plus longue sous-suite croissante}
+\begin{frame}{Plus longue sous-suite croissante}
+    \begin{theorem}[\cite{sk}]
+Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satisfait:
+\begin{itemize}
+\item  Pour tout entier strictement positif $n$ pour toutes permutations  $\sigma,\rho \in \mathfrak{S}_n$,
+\begin{equation*}\label{h1}
+\mathbb{P}(\sigma_n=\sigma)=\mathbb{P}(\sigma_n=\rho^{-1}\sigma\rho).
+\end{equation*}
+\item Pour tout $\varepsilon>0$,
+\begin{equation*}\label{h2}
+\lim_{n\to \infty}\mathbb{P}\left(\frac{\#(\sigma_n)}{n^\frac 16 }>\varepsilon\right) =0.
+\end{equation*}
+\end{itemize}
+Then  for all  $s \in \mathbb{R}$,
+\begin{equation*} \label{TW} 
+\lim_{n\to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=\lim_{n\to \infty} \mathbb{P}\left(\frac{\underline{\ell}(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s).
+\end{equation*}
+\end{theorem}
+\end{frame}
+\subsection{Forme limite de Vershik-Kerov-Logan-Shepp}
+
+\subsection{Cas particulier: Ewens} 
 
 
 \begin{frame}{Références}
