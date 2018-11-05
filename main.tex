@@ -125,7 +125,7 @@ $\ell(\sigma)=3$.
         \item     Exemple : les tableaux de Young de forme $\yng(3,1)$ sont $\young(123,4),\young(124,3),\young(134,2)$. 
     \item$dim(\lambda)=$ \# tableau de Young de forme $\lambda$. 
     \item Exemple  $dim\left(\yng(3,1)\right)=3$.
-    \item $dim(\lambda)$ dimension de  la représentation du groupe symétrique indexé par $\lambda$.
+    \item $dim(\lambda) = $   dimension de  la représentation du groupe symétrique indexé par $\lambda$.
     \end{itemize}
  \end{frame}
 
@@ -277,17 +277,45 @@ Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satis
 \lim_{n\to \infty}\mathbb{P}\left(\frac{\#(\sigma_n)}{n^\frac 16 }>\varepsilon\right) =0.
 \end{equation*}
 \end{itemize}
-Then  for all  $s \in \mathbb{R}$,
+Alors pour tout  $s \in \mathbb{R}$,
 \begin{equation*} \label{TW} 
 \lim_{n\to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=\lim_{n\to \infty} \mathbb{P}\left(\frac{\underline{\ell}(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s).
 \end{equation*}
 \end{theorem}
 \end{frame}
 \subsection{Forme limite de Vershik-Kerov-Logan-Shepp}
-
+ \begin{frame}{Forme limite}
+    \begin{theorem}[\cite{sk}]
+Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satisfait:
+\begin{itemize}
+\item  Pour tout entier strictement positif $n$ pour toutes permutations  $\sigma,\rho \in \mathfrak{S}_n$,
+\begin{equation*}
+\mathbb{P}(\sigma_n=\sigma)=\mathbb{P}(\sigma_n=\rho^{-1}\sigma\rho).
+\end{equation*}
+\item Pour tout $\varepsilon>0$,
+\begin{equation*}
+\lim_{n\to \infty}\mathbb{P}\left(\frac{\#(\sigma_n)}{n^\frac 12 }>\varepsilon\right) =0.
+\end{equation*}
+\end{itemize}
+Alors pour  tout  $\varepsilon>0$,
+\begin{equation*} 
+\lim_{n\to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=\lim_{n\to \infty} \mathbb{P}\left(\frac{\underline{\ell}(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s).
+\end{equation*}
+\end{theorem}
+\end{frame}
 \subsection{Cas particulier: Ewens} 
-
-
+\begin{frame}{Application : Ewens}
+\begin{definition}[Loi d'Ewens]
+Soit $\theta\geq 0$. On dit que $\sigma_n\sim Ew(\theta)$ si  
+\begin{equation*}
+\mathbb{P}(\sigma_n=\sigma)=\frac{\theta^{\#(\sigma)-1}}{\prod_{k=1}^{n-1}(\theta+k)}.\end{equation*}
+\end{definition}
+\begin{itemize}
+\item $\theta$ Un taux de mutation.
+\item  Chaque cycle représente un "type d'allèles". 
+\item Structure logaritmique : $$\mathbb{E}(\#(\sigma_n))= 1+\sum_{k=1}^{n-1} \frac{\theta}{\theta+k}\sim \theta \log(n).$$
+\end{itemize}
+\end{frame}
 \begin{frame}{Références}
 \tiny
 
