@@ -41,12 +41,12 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Universalité pour les sous-suites croissantes des permutations aléatoires}
+\title{Universalité pour les sous-suites croissantes de permutations aléatoires}
 
 \subtitle {Forum Jeunes Mathématiciennes et Mathématiciens}
 \author 
 { \large{Mohamed Slim Kammoun}
-\\ \small{Université de Lille} \\ \ \\ \large{Avec Mylène Maida  et Adrien Hardy}}
+\\ \small{Université de Lille} \\ \ \\ \large{Directeurs de thèse :  Mylène Maïda  et Adrien Hardy}}
 \date { 29 November 2018}
 \titlegraphic{
 \includegraphics[height=0.9cm]{l1}
@@ -72,16 +72,16 @@
 \begin{itemize}
     \item Permutations aléatoires 
 \begin{itemize}
-    \item Distributions : loi uniforme, Ewens, Mallow, permutations virtuelles, Kingman etc.
-    \item Objets combinatoires : nombre de cycles, longueurs des cycles, points fixes, suites monotone, les descentes etc.
+    \item Distributions : loi uniforme, Ewens, Mallows, permutations virtuelles, Kingman etc.
+    \item Objets combinatoires : nombre de cycles, longueurs des cycles, points fixes, suites monotones, descentes etc.
     \item Applications : biologie, combinatoire, processus de coalescence, classification etc. 
 \end{itemize}
 \item Universalité pour les processus ponctuels (déterminantaux) 
 \begin{itemize}
     \item Plus grande particule : distribution de Tracy-Widom.
-    \item Au bord : processus de Airy
-    \item Convergence globale : loi semi-circulaire de Wigner
-    \item Au "bulk" : processus sinus (discret) 
+    \item Au bord : processus de Airy.
+    \item Convergence globale : loi semi-circulaire de Wigner.
+    \item Dans le  "bulk" : processus sinus (discret).
 \end{itemize}
 
 \end{itemize}
@@ -98,7 +98,7 @@
 \color{gray}
 \rule{\linewidth}{1pt}
 \ytl{1950's}{Travaux de Wigner}
-\ytl{1963}{Wiger : Prix Nobel}
+\ytl{1963}{Wigner : Prix Nobel}
 \ytl{1970}{Discussion de Dyson-Montgomery : Zéros de $\zeta$ }
 \ytl{1990's}{Matrices aléatoires, universalité de Tao et Vu}
 \ytl{1999}{Travaux de Baik, Deift et Johansson}
@@ -130,11 +130,11 @@
 \begin{frame}{Plus longue sous-suite croissante}
 \begin{itemize}
 
-\item $\mathfrak{S_n}$ : Le groupe symétrique d'ordre $n$ (l'ensemble des permutations de $\{1,2,\dots,n\}$).
+\item $\mathfrak{S_n}$ :  groupe symétrique d'ordre $n$ (l'ensemble des permutations de $\{1,2,\dots,n\}$).
 \\ 
 \item $i_1<i_2<\dots<i_k$ est une sous-suite croissante de longueur $k$ si $\sigma(i_1)<\sigma(i_2)\dots\sigma(i_k)$.
 
-\item $\ell(\sigma)$  la longueur de la plus longue sous-suite croissante.
+\item $\ell(\sigma)$ : longueur de la plus longue sous-suite croissante.
 \item Exemple : \begin{equation*}\sigma=\begin{pmatrix}
  1& 2 & 3 & 4 & 5 \\ 
  5& 3 & 1 & 2 & 4 
@@ -144,17 +144,17 @@ $\ell(\sigma)=3$.
 
 \end{itemize}
 \end{frame}
-\subsection{Correspondance de Robinson-Schinsted}
+\subsection{Correspondance de Robinson-Schensted}
 
 \begin{frame}{Tableaux de Young}
-   \begin{definition}[Diagrammes de Young]
+   \begin{definition}[Diagramme de Young]
    $\lambda=(\lambda_i)_{i\geq1} \in \mathbb{N}^{\mathbb{N}^*}$ est un diagramme de Young de taille $n$ si 
    \begin{itemize}
        \item $\forall i\geq1, \  \lambda_{i+1}\leq \lambda_i$,
        \item $\sum_{i=1}^\infty \lambda_i=n$.
    \end{itemize}
    \end{definition}
-   Exemple : les diagrammes de Young de taille 3 sont $\mathbb{Y}_3=(3,\underline{0}),(2,1,\underline{0}),(1,1,1,\underline{0})$
+   Exemple : les diagramme de Young de taille 3 sont $\mathbb{Y}_3=(3,\underline{0}),(2,1,\underline{0}),(1,1,1,\underline{0})$
    \\   ou$\left(\yng(3),\yng(2,1),\yng(1,1,1)\right)$.
    
  
@@ -166,16 +166,16 @@ $\ell(\sigma)=3$.
     \begin{itemize}
         \item     Exemple : les tableaux de Young de forme $\yng(3,1)$ sont $\young(123,4),\young(124,3),\young(134,2)$. 
     \item$dim(\lambda)=$ \# tableau de Young de forme $\lambda$. 
-    \item Exemple  $dim\left(\yng(3,1)\right)=3$.
+    \item Exemple : $dim\left(\yng(3,1)\right)=3$.
     \item $dim(\lambda) = $   dimension de  la représentation du groupe symétrique indexé par $\lambda$.
     \end{itemize}
  \end{frame}
 
 
-\begin{frame}{Correspondance de Robinson-Schinsted}
+\begin{frame}{Correspondance de Robinson-Schensted}
 \begin{itemize}
     \item Bijection entre les permutations de $\mathfrak{S_n}$ et les paires de  tableaux de Young de même forme. 
-    \item On note $\lambda(\sigma):=\lambda_i(\sigma)$ la forme de l'image de $\sigma$ par cette correspondance. 
+    \item On note $\lambda(\sigma):=(\lambda_i(\sigma))_{i\geq1}$ la forme de l'image de $\sigma$ par cette correspondance. 
     \item $\ell(\sigma)=\lambda_1(\sigma)$
 \end{itemize}    
 \end{frame}
@@ -612,7 +612,7 @@ On parle "d'universalité":
 \end{frame}
 
 \subsection{Forme limite de Vershik-Kerov-Logan-Shepp}
-\begin{frame}{Notations Russe}
+\begin{frame}{Notation Russe}
 \begin{itemize}
     \item On fait une rotation du tableau par $\frac{3\pi}{4}$.
     \item On regarde la fonction de hauteur complétée par $|x|$.
@@ -620,7 +620,7 @@ On parle "d'universalité":
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Notations Russes}
+\begin{frame}{Notation Russe}
  \begin{figure}
 \centering
 \begin{tikzpicture}    [/pgfplots/y=0.42cm, /pgfplots/x=0.42cm]
@@ -677,8 +677,8 @@ On parle "d'universalité":
 où
 \begin{align*}
 \Omega(s):=\begin{cases}
-\frac{2}{\pi}(s\arcsin({s})+\sqrt{1-s^2}) & \text{ if } |s|<1 \\ 
-|s| & \text{ if } |s|\geq 1 
+\frac{2}{\pi}(s\arcsin({s})+\sqrt{1-s^2}) & \text{ si } |s|<1 \\ 
+|s| & \text{ si } |s|\geq 1 
 \end{cases}.
 \end{align*}
     \end{theorem}
@@ -723,25 +723,25 @@ Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satis
 \end{equation*}
 \item Pour tout $\varepsilon>0$,
 \begin{equation*}
-\lim_{n\to \infty}\mathbb{P}\left(\frac{\#(\sigma_n)}{n^\frac 12 }>\varepsilon\right) =0.
+\lim_{n\to \infty}\mathbb{P}\left(\frac{\#(\sigma_n)}{n} >\varepsilon\right) =0.
 \end{equation*}
 \end{itemize}
 Alors pour  tout  $\varepsilon>0$,
 \begin{align*}
-\lim_{n\to \infty} \mathbb{P}\left(\sup_{s\in \mathbb{R}} \left|\frac{1}{\sqrt{2n}}L_{\lambda(\sigma_n)}\left({s}{\sqrt{2n}}\right)-\Omega(s)\right|<\varepsilon\right) =1,
+\lim_{n\to \infty} \mathbb{P}\left(\sup_{s\in \mathbb{R}} \left|\frac{1}{\sqrt{2n}}L_{\lambda(\sigma_n)}\left({s}{\sqrt{2n}}\right)-\Omega(s)\right|<\varepsilon\right) =1.
 \end{align*}
 \end{theorem}
 \end{frame}
 \subsection{Cas particulier: Ewens} 
-\begin{frame}{Example d'application : Ewens}
+\begin{frame}{Exaeple d'application : Ewens}
 \begin{definition}[Loi d'Ewens]
 Soit $\theta\geq 0$. On dit que $\sigma_n\sim Ew(\theta)$ si  
 \begin{equation*}
 \mathbb{P}(\sigma_n=\sigma)=\frac{\theta^{\#(\sigma)-1}}{\prod_{k=1}^{n-1}(\theta+k)}.\end{equation*}
 \end{definition}
 \begin{itemize}
-\item $\theta$ : un taux de mutation.
-\item Un cycle = un type d'allèles. 
+\item $\theta$ :  taux de mutation.
+\item Un cycle = type d'allèles. 
 \item Structure logarithmique : $$\mathbb{E}(\#(\sigma_n))= 1+\sum_{k=1}^{n-1} \frac{\theta}{\theta+k}\sim \theta \log(n).$$
 \end{itemize}
 \end{frame}
