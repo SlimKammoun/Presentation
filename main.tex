@@ -74,14 +74,14 @@
 \begin{itemize}
     \item Distributions : loi uniforme, Ewens, Mallow, permutations virtuelles, Kingman etc.
     \item Objets combinatoires : nombre de cycles, longueurs des cycles, points fixes, suites monotone, les descentes etc.
-    \item Applications : biologie (Ewens, mutations), combinatoire, processus coalescence, classification d etc. 
+    \item Applications : biologie, combinatoire, processus de coalescence, classification etc. 
 \end{itemize}
-\item Universalité pour processus ponctuels (déterminantaux) 
+\item Universalité pour les processus ponctuels (déterminantaux) 
 \begin{itemize}
-    \item Plus grande particule : Distribution de Tracy-Widom.
-    \item Au bord : Processus de Airy
-    \item Convergence globale : loi Semi-circulaire de Wigner
-    \item Au "bulk" : Processus Sinus (discret) 
+    \item Plus grande particule : distribution de Tracy-Widom.
+    \item Au bord : processus de Airy
+    \item Convergence globale : loi semi-circulaire de Wigner
+    \item Au "bulk" : processus sinus (discret) 
 \end{itemize}
 
 \end{itemize}
@@ -99,11 +99,11 @@
 \rule{\linewidth}{1pt}
 \ytl{1950's}{Travaux de Wigner}
 \ytl{1963}{Wiger : Prix Nobel}
-\ytl{1970}{Discussion Dyson & Montgomery : Zéro de $\zeta$ }
-\ytl{1990's}{Matrices aléatoires, Universalité de Tao et Vu}
+\ytl{1970}{Discussion de Dyson-Montgomery : Zéros de $\zeta$ }
+\ytl{1990's}{Matrices aléatoires, universalité de Tao et Vu}
 \ytl{1999}{Travaux de Baik, Deift et Johansson}
 \ytl{2000's}{Modèles discrets}
-\ytl{2010's}{Apllications : Télécom, statistiques, apprentissage automatique etc.}
+\ytl{2010's}{Applications : télécom, statistiques, apprentissage automatique etc.}
 \bigskip
 \rule{\linewidth}{1pt}%
 \end{minipage}%
@@ -134,8 +134,8 @@
 \\ 
 \item $i_1<i_2<\dots<i_k$ est une sous-suite croissante de longueur $k$ si $\sigma(i_1)<\sigma(i_2)\dots\sigma(i_k)$.
 
-\item $\ell(\sigma)$  la longueur de la plus longue sous-suite croissante
-\item Exemple \begin{equation*}\sigma=\begin{pmatrix}
+\item $\ell(\sigma)$  la longueur de la plus longue sous-suite croissante.
+\item Exemple : \begin{equation*}\sigma=\begin{pmatrix}
  1& 2 & 3 & 4 & 5 \\ 
  5& 3 & 1 & 2 & 4 
 \end{pmatrix}
@@ -150,18 +150,18 @@ $\ell(\sigma)=3$.
    \begin{definition}[Diagrammes de Young]
    $\lambda=(\lambda_i)_{i\geq1} \in \mathbb{N}^{\mathbb{N}^*}$ est un diagramme de Young de taille $n$ si 
    \begin{itemize}
-       \item $\forall i\geq1, \  \lambda_{i+1}\leq \lambda_i$
-       \item $\sum_{i=1}^\infty \lambda_i=n$
+       \item $\forall i\geq1, \  \lambda_{i+1}\leq \lambda_i$,
+       \item $\sum_{i=1}^\infty \lambda_i=n$.
    \end{itemize}
    \end{definition}
    Exemple : les diagrammes de Young de taille 3 sont $\mathbb{Y}_3=(3,\underline{0}),(2,1,\underline{0}),(1,1,1,\underline{0})$
-   \\   ou$\left(\yng(3),\yng(2,1),\yng(1,1,1)\right)$
+   \\   ou$\left(\yng(3),\yng(2,1),\yng(1,1,1)\right)$.
    
  
 \end{frame}
 \begin{frame}{Tableau de Young}
     \begin{definition}[Tableau de Young]
-    Un tableau de Young de forme $\lambda$ est un remplissage du diagramme de Young $\lambda$ avec les entrées $\{1,2,\dots,n\}$ strictement croissant sur chaque ligne et chaque colonne. 
+    Un tableau de Young de forme $\lambda$ est un remplissage strictement croissant sur chaque ligne et chaque colonne du diagramme de Young $\lambda$ en utilisant les entrées $\{1,2,\dots,n\}$. 
     \end{definition}
     \begin{itemize}
         \item     Exemple : les tableaux de Young de forme $\yng(3,1)$ sont $\young(123,4),\young(124,3),\young(134,2)$. 
@@ -563,7 +563,7 @@ axis x line=center,
 
     \end{tikzpicture}
 \end{center}
-$$\young(12456,37,8),\young(12568,34,7)$$
+$$\young(12456,37,8),\young(12568,34,7) , \quad \lambda(\sigma)=\yng(5,2,1)$$
 
     \end{overprint} 
 
@@ -587,7 +587,7 @@ $$\young(12456,37,8),\young(12568,34,7)$$
 \begin{itemize}
     \item Si $\sigma_n \sim {U}_{\mathfrak{S}_n}$ alors 
     \begin{align*}
-    \mathbb{P}(\lambda)&=\frac{\#\{\text{paires de tableaux de Young de forme } \lambda\}}{C}\\&=\frac{dim(\lambda)^2}{\sum_{\mu\in \mathbb{Y}_nμdim} dim( \mu)^2}=\frac{dim(\lambda)^2}{\# \mathfrak{S}_N}=\frac{dim(\lambda)^2}{n!} 
+    \mathbb{P}(\lambda)&=\frac{\#\{\text{paires de tableaux de Young de forme } \lambda\}}{C}\\&=\frac{dim(\lambda)^2}{\sum_{\mu\in \mathbb{Y}_n} dim( \mu)^2}=\frac{dim(\lambda)^2}{\# \mathfrak{S}_N}=\frac{dim(\lambda)^2}{n!} 
     \end{align*}
     \item Prouvé par \cite{vershik} ($c=2$).
 \end{itemize}
@@ -602,12 +602,12 @@ Si $\sigma_n \sim U_{\mathfrak{S}_n}$ alors
 \begin{equation*} 
 \lim_{n \to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s),
 \end{equation*}
-o\`u  $F_2$ est la distribution de Tracy-Widom.
+o\`u  $F_2$ est la fonction de répartition de la distribution de Tracy-Widom.
 \end{theorem}
 On parle "d'universalité":
 \begin{itemize}
-    \item Plus grande (petite) valeurs propres de matrices aléatoires
-    \item Modèles de particules comme le TASEP
+    \item Plus grande (petite) valeur propre de matrices aléatoires.
+    \item Modèles de particules comme le TASEP.
 \end{itemize}
 \end{frame}
 
@@ -697,7 +697,7 @@ où
     \begin{theorem}[\cite{sk}]
 Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satisfait:
 \begin{itemize}
-\item  Pour tout entier strictement positif $n$ pour toutes permutations  $\sigma,\rho \in \mathfrak{S}_n$,
+\item  Pour tout entier strictement positif $n$, pour toutes permutations  $\sigma,\rho \in \mathfrak{S}_n$,
 \begin{equation*}\label{h1}
 \mathbb{P}(\sigma_n=\sigma)=\mathbb{P}(\sigma_n=\rho^{-1}\sigma\rho).
 \end{equation*}
@@ -708,7 +708,7 @@ Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satis
 \end{itemize}
 Alors pour tout  $s \in \mathbb{R}$,
 \begin{equation*} \label{TW} 
-\lim_{n\to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=\lim_{n\to \infty} \mathbb{P}\left(\frac{\underline{\ell}(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s).
+\lim_{n\to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s).
 \end{equation*}
 \end{theorem}
 \end{frame}
@@ -717,7 +717,7 @@ Alors pour tout  $s \in \mathbb{R}$,
     \begin{theorem}[\cite{sk}]
 Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satisfait:
 \begin{itemize}
-\item  Pour tout entier strictement positif $n$ pour toutes permutations  $\sigma,\rho \in \mathfrak{S}_n$,
+\item  Pour tout entier strictement positif $n$, pour toutes permutations  $\sigma,\rho \in \mathfrak{S}_n$,
 \begin{equation*}
 \mathbb{P}(\sigma_n=\sigma)=\mathbb{P}(\sigma_n=\rho^{-1}\sigma\rho).
 \end{equation*}
@@ -727,21 +727,21 @@ Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satis
 \end{equation*}
 \end{itemize}
 Alors pour  tout  $\varepsilon>0$,
-\begin{equation*} 
-\lim_{n\to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=\lim_{n\to \infty} \mathbb{P}\left(\frac{\underline{\ell}(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s).
-\end{equation*}
+\begin{align*}
+\lim_{n\to \infty} \mathbb{P}\left(\sup_{s\in \mathbb{R}} \left|\frac{1}{\sqrt{2n}}L_{\lambda(\sigma_n)}\left({s}{\sqrt{2n}}\right)-\Omega(s)\right|<\varepsilon\right) =1,
+\end{align*}
 \end{theorem}
 \end{frame}
 \subsection{Cas particulier: Ewens} 
-\begin{frame}{Application : Ewens}
+\begin{frame}{Example d'application : Ewens}
 \begin{definition}[Loi d'Ewens]
 Soit $\theta\geq 0$. On dit que $\sigma_n\sim Ew(\theta)$ si  
 \begin{equation*}
 \mathbb{P}(\sigma_n=\sigma)=\frac{\theta^{\#(\sigma)-1}}{\prod_{k=1}^{n-1}(\theta+k)}.\end{equation*}
 \end{definition}
 \begin{itemize}
-\item $\theta$ Un taux de mutation.
-\item  Chaque cycle représente un "type d'allèles". 
+\item $\theta$ : un taux de mutation.
+\item Un cycle = un type d'allèles. 
 \item Structure logarithmique : $$\mathbb{E}(\#(\sigma_n))= 1+\sum_{k=1}^{n-1} \frac{\theta}{\theta+k}\sim \theta \log(n).$$
 \end{itemize}
 \end{frame}
@@ -756,8 +756,8 @@ Soit $\theta\geq 0$. On dit que $\sigma_n\sim Ew(\theta)$ si
 
   \begin{columns}
     \begin{column}{0.70\textwidth}
-      \begin{center}
-        \includegraphics[width=\textwidth]{11}          
+      \begin{center}Ajouter une image (Limit shape par exemple) 
+     %   \includegraphics[width=\textwidth]{11}          
       \end{center}
     \end{column}
     \begin{column}{0.30\textwidth}
