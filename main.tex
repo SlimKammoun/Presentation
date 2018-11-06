@@ -29,6 +29,14 @@
 \setbeamertemplate{footline}[frame number]
 \newtheorem{conjecture}[theorem]{Conjecture}
 
+\usepackage{fourier, heuristica}
+\usepackage{array, booktabs}
+\usepackage{graphicx}
+\usepackage[x11names,table]{xcolor}
+\usepackage{caption}
+\DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
+
+\newcommand{\foo}{\color{LightSteelBlue3}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,7 +45,7 @@
 \subtitle {Forum Jeunes Mathématiciennes et Mathématiciens}
 \author 
 { \large{Mohamed Slim Kammoun}
-\\ Université de Lille \\ \ \\ \large{Avec Mylène Maida  et Adrien Hardy}}
+\\ \small{Université de Lille} \\ \ \\ \large{Avec Mylène Maida  et Adrien Hardy}}
 \date { 29 November 2018}
 \titlegraphic{
 \includegraphics[height=0.9cm]{l1}
@@ -45,6 +53,10 @@
    \includegraphics[height=0.9cm]{l6}
    
 }
+
+\usepackage{xcolor}
+\newcommand\ytl[2]{
+\parbox[b]{5em}{\hfill{\color{cyan}\bfseries\sffamily #1}~$\cdots\cdots$~}\makebox[0pt][c]{$\bullet$}\vrule\quad \parbox[c]{5.5cm}{\vspace{7pt}\color{red!40!black!80}\raggedright\sffamily #2.\\[7pt]}\\[-3pt]}
 
 \begin{document}
 
@@ -55,17 +67,46 @@
 
 
 \section*{Introduction}
-\begin{frame}{Permutations aléatoires}
+\begin{frame}{Introduction}
 \begin{itemize}
-    \item Exemple : loi uniforme, Ewens, Mallow, permutations virtuelles, Kingman etc.
+    \item Permutations aléatoires 
+\begin{itemize}
+    \item Distributions : loi uniforme, Ewens, Mallow, permutations virtuelles, Kingman etc.
     \item Objets combinatoires : nombre de cycles, longueurs des cycles, points fixes, suites monotone, les descentes etc.
     \item Applications : biologie (Ewens, mutations), combinatoire, processus coalescence, classification d etc. 
 \end{itemize}
+\item Universalité pour processus ponctuels (déterminantaux) 
+\begin{itemize}
+    \item Plus grande particule : Distribution de Tracy-Widom.
+    \item Au bord : Processus de Airy
+    \item Convergence globale : loi Semi-circulaire de Wigner
+    \item Au "bulk" : Processus Sinus (discret) 
+\end{itemize}
+
+\end{itemize}
 \end{frame}
 
-
 \begin{frame}{Universalité}
-  \includegraphics[scale=0.4]{Capture}
+
+
+\begin{table}
+\small{}
+\caption{Historique}
+\centering
+\begin{minipage}[t]{.7\linewidth}
+\color{gray}
+\rule{\linewidth}{1pt}
+\ytl{1950's}{Travaux de Wigner}
+\ytl{1963}{Wiger : Prix Nobel}
+\ytl{1970}{Discussion Dyson & Montgomery : Zéro de $\zeta$ }
+\ytl{1990's}{Matrices aléatoires, Universalité de Tao et Vu}
+\ytl{1999}{Travaux de Baik, Deift et Johansson}
+\ytl{2000's}{Modèles discrets}
+\ytl{2010's}{Apllications : Télécom, statistiques, apprentissage automatique etc.}
+\bigskip
+\rule{\linewidth}{1pt}%
+\end{minipage}%
+\end{table}    
 \end{frame}
 \begin{frame}{Plan}
      \tableofcontents[
@@ -112,7 +153,7 @@ $\ell(\sigma)=3$.
        \item $\sum_{i=1}^\infty \lambda_i=n$
    \end{itemize}
    \end{definition}
-   Exemple : les diagrammes de Young de taille 3 sont $(3,\underline{0}),(2,1,\underline{0}),(1,1,1,\underline{0})$
+   Exemple : les diagrammes de Young de taille 3 sont $\mathbb{Y}_3=(3,\underline{0}),(2,1,\underline{0}),(1,1,1,\underline{0})$
    \\   ou$\left(\yng(3),\yng(2,1),\yng(1,1,1)\right)$
    
  
@@ -138,7 +179,7 @@ $\ell(\sigma)=3$.
 \end{itemize}    
 \end{frame}
 \begin{frame}{Construction géométrique de Viennot}
- A ajouter les diapos   
+
 \end{frame}
 
 
@@ -158,7 +199,7 @@ $\ell(\sigma)=3$.
 \begin{itemize}
     \item Si $\sigma_n \sim {U}_{\mathfrak{S}_n}$ alors 
     \begin{align*}
-    \mathbb{P}(\lambda)&=\frac{\#\{\text{paires de tableaux de Young de forme } \lambda\}}{C}\\&=\frac{dim(\lambda)^2}{\sum_{\hat\lambda} dim( \hat\lambda)^2}=\frac{dim(\lambda)^2}{\# \mathfrak{S}_N}=\frac{dim(\lambda)^2}{n!} 
+    \mathbb{P}(\lambda)&=\frac{\#\{\text{paires de tableaux de Young de forme } \lambda\}}{C}\\&=\frac{dim(\lambda)^2}{\sum_{\mu\in \mathbb{Y}_nμdim} dim( \mu)^2}=\frac{dim(\lambda)^2}{\# \mathfrak{S}_N}=\frac{dim(\lambda)^2}{n!} 
     \end{align*}
     \item Prouvé par \cite{vershik} ($c=2$).
 \end{itemize}
@@ -313,7 +354,7 @@ Soit $\theta\geq 0$. On dit que $\sigma_n\sim Ew(\theta)$ si
 \begin{itemize}
 \item $\theta$ Un taux de mutation.
 \item  Chaque cycle représente un "type d'allèles". 
-\item Structure logaritmique : $$\mathbb{E}(\#(\sigma_n))= 1+\sum_{k=1}^{n-1} \frac{\theta}{\theta+k}\sim \theta \log(n).$$
+\item Structure logarithmique : $$\mathbb{E}(\#(\sigma_n))= 1+\sum_{k=1}^{n-1} \frac{\theta}{\theta+k}\sim \theta \log(n).$$
 \end{itemize}
 \end{frame}
 \begin{frame}{Références}
