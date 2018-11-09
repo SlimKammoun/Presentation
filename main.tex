@@ -13,6 +13,7 @@
 }
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollaire}[theorem]{Corollaire}
+\usepackage{calc}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -69,20 +70,22 @@
 
 \section*{Introduction}
 \begin{frame}{Introduction}
-\begin{itemize}
-    \item Permutations aléatoires 
+     Permutations aléatoires : 
 \begin{itemize}
     \item Distributions : loi uniforme, Ewens, Mallows, permutations virtuelles, Kingman etc.
     \item Objets combinatoires : nombre de cycles, longueurs des cycles, points fixes, suites monotones, descentes etc.
     \item Applications : biologie, combinatoire, processus de coalescence, classification etc. 
 \end{itemize}
-\item Universalité pour les processus ponctuels (déterminantaux) 
+\end{frame}
+
+\begin{frame}{Introduction}
+Universalité pour les processus ponctuels (déterminantaux) :
 \begin{itemize}
     \item Plus grande particule : distribution de Tracy-Widom.
     \item Au bord : processus de Airy.
     \item Convergence globale : loi semi-circulaire de Wigner.
     \item Dans le  "bulk" : processus sinus (discret).
-\end{itemize}
+
 
 \end{itemize}
 \end{frame}
@@ -153,6 +156,8 @@ $\ell(\sigma)=5$.
        \item $\sum_{i=1}^\infty \lambda_i=n$.
    \end{itemize}
    \end{definition}
+   \vspace{10 mm}
+
    Exemple : les diagramme de Young de taille 3 sont $\mathbb{Y}_3=(3,\underline{0}),(2,1,\underline{0}),(1,1,1,\underline{0})$
    \\   ou$\left(\yng(3),\yng(2,1),\yng(1,1,1)\right)$.
    
@@ -166,7 +171,7 @@ $\ell(\sigma)=5$.
         \item     Exemple : les tableaux de Young de forme $\yng(3,1)$ sont $\young(123,4),\young(124,3),\young(134,2)$. 
     \item$dim(\lambda)=$ \# tableau de Young de forme $\lambda$. 
     \item Exemple : $dim\left(\yng(3,1)\right)=3$.
-    \item $dim(\lambda) = $   dimension de  la représentation du groupe symétrique indexé par $\lambda$.
+    \item $dim(\lambda) = $   dimension de  la représentation irreductible du groupe symétrique indexé par $\lambda$.
     \end{itemize}
  \end{frame}
 
@@ -583,6 +588,8 @@ $$\young(12456,37,8),\young(12568,34,7) , \quad \lambda(\sigma)=\yng(5,2,1)$$
     Si $\sigma_n \sim {U}_{\mathfrak{S}_n}$, alors
     $$\lim_{n\to \infty}\frac{\mathbb{E}(\ell(\sigma_n))}{\sqrt{n}}=c.$$ 
     \end{conjecture}
+    \vspace{4 mm}
+
 \begin{itemize}
     \item Si $\sigma_n \sim {U}_{\mathfrak{S}_n}$ alors 
     \begin{align*}
@@ -603,6 +610,8 @@ Si $\sigma_n \sim U_{\mathfrak{S}_n}$ alors
 \end{equation*}
 o\`u  $F_2$ est la fonction de répartition de la distribution de Tracy-Widom.
 \end{theorem}
+\vspace{10 mm}
+
 On parle "d'universalité":
 \begin{itemize}
     \item Plus grande (petite) valeur propre de matrices aléatoires.
@@ -681,9 +690,21 @@ où
 \end{cases}.
 \end{align*}
     \end{theorem}
+    \vspace{10 mm}
+
     Il y a un lien entre $\Omega$ et la loi semi-circulaire de Wigner.
 \end{frame}
+\begin{frame}{Forme limite de Vershik-Kerov-Logan-Shepp}
+    \begin{figure}[ht]
+    \centering
+     \def\svgscale{.65}
+    \input{diag.pdf_tex}
+       
 
+    \caption{Illustration de la convergence de   Vershik-Kerov-Logan-Shepp}
+\end{figure}
+
+\end{frame}
 \section{Généralisations}
 \begin{frame}{Plan}
 \tableofcontents[currentsection,currentsubsection,
@@ -738,6 +759,8 @@ Soit $\theta\geq 0$. On dit que $\sigma_n\sim Ew(\theta)$ si
 \begin{equation*}
 \mathbb{P}(\sigma_n=\sigma)=\frac{\theta^{\#(\sigma)-1}}{\prod_{k=1}^{n-1}(\theta+k)}.\end{equation*}
 \end{definition}
+\vspace{5 mm}
+
 \begin{itemize}
 \item $\theta$ :  taux de mutation.
 \item Un cycle = type d'allèles. 
@@ -755,8 +778,13 @@ Soit $\theta\geq 0$. On dit que $\sigma_n\sim Ew(\theta)$ si
 
   \begin{columns}
     \begin{column}{0.70\textwidth}
-      \begin{center}Ajouter une image (Limit shape par exemple) 
-     %   \includegraphics[width=\textwidth]{11}          
+      \begin{center}
+      \begin{figure}[ht]
+    \centering
+        \def\svgwidth{\columnwidth}
+    \input{diag.pdf_tex}
+\end{figure}
+
       \end{center}
     \end{column}
     \begin{column}{0.30\textwidth}
